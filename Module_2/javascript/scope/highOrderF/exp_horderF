@@ -1,0 +1,27 @@
+// high order function does two things:
+            // 1. accepts another function as argument
+            // 2. returns another function as a result
+
+
+//Accepting callback functions
+
+// function bookFlight(purchaseTickets){
+//     purchaseTickets();// callback
+// }
+
+// bookFlight ( () => {
+//     //code for purchasing tickets goes her
+// });
+
+
+// Return function
+
+function login(retrieveUserData){
+    const user = retrieveUserData();
+
+    function greetUser(user){
+        return `Welcome ${user.name}!`
+    }
+
+    return greetUser;
+}
